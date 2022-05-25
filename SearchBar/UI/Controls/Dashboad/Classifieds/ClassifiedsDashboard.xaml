@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Classifieds.ClassifiedsDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:search="clr-namespace:SearchBar.UI.Controls.SearchTextBox"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Classifieds"
+             mc:Ignorable="d" 
+             Height="500" d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  MinWidth="380" MaxWidth="380"/>
+            <ColumnDefinition  Width="300*"/>
+            <ColumnDefinition  Width="300*"/>
+            <ColumnDefinition  Width="300*"/>
+            <ColumnDefinition  Width="300*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="117*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="59*"/>
+                <RowDefinition Height="64*"/>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="33*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Image x:Name="logo"/>
+                <TextBlock TextWrapping="Wrap" Margin="7,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="22" Text="Classifields" Foreground="White"/>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="54">
+                <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="Craigslist"  Background="#CC080C11" Height="54" Width="99">
+                    <Image x:Name="craigslist" Margin="4"/>
+                </Border>
+                <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="Ebay"  Background="#CC080C11" Height="54" Width="99">
+                    <Image x:Name="ebay" Margin="4"/>
+                </Border>
+                <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="Letgo"  Background="#CC080C11" Height="54" Width="99">
+                    <Image x:Name="letgo" Margin="4"/>
+                </Border>
+            </WrapPanel>
+            <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" x:Name="StatePanel">
+                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Grid.Column="1" TextWrapping="Wrap" Text="Select State" FontSize="18" Foreground="White" Height="24"/>
+                <ComboBox x:Name="StateComboBox" HorizontalAlignment="Left" Foreground="White" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal" x:Name="LocationPanel">
+                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Grid.Column="1" TextWrapping="Wrap" Text="Select Location" FontSize="18" Foreground="White" Height="24"/>
+                <ComboBox x:Name="LocationComboBox" Foreground="White" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" x:Name="LookingSearchPanel">
+                <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Grid.Column="1" TextWrapping="Wrap" Text="What are you looking for?" FontSize="18" Foreground="White" Height="24"/>
+                <ComboBox x:Name="SearchCategoryComboBox" Foreground="White" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Bottom"  Margin="10,0,0,0" x:Name="SearchTextbox" TextWrapping="Wrap" FontSize="18" Text="" Foreground="White" Width="120" PreviewKeyDown="SearchTextbox_PreviewKeyDown"/>
+            </StackPanel>
+            <Button  Grid.Row="8" Grid.Column="1" Height="35" Content="Search" Click="Button_Click"/>
+        </Grid>
+        <Grid  Background="#CC060A0F" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Local Classifieds" Foreground="White" />
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Locanto" Background="#CC080C11" MainText="Locanto" Description="Free classifieds."/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="ClassifiedadsAds" Background="#CC080C11" MainText="Classifield Ads" Description="Post an ad (free)."/>
+            <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="Oodle" Background="#CC080C11" MainText="Oodle" Description="Marketplace United States."/>
+        </Grid>
+        <Grid  Background="#CC060A0F" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Buy, Sell &amp; Trade" Foreground="White" />
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="FaceMarket" Background="#CC080C11" MainText="Facebook Marketplace" Description="Buy and sell items locally or have something new shipped from stores."/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="Mercari" Background="#CC080C11" MainText="Mercari" Description="Sell from home."/>
+            <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="Etsy" Background="#CC080C11" MainText="Etsy" Description="Find things you'll love."/>
+        </Grid>
+        <Grid Grid.Column="3" Background="#CC010102">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Local Events" Foreground="White" />
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Eventful" Background="#CC080C11" MainText="Eventful" Description="Things To Do in U.S.A"/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="Meetup" Background="#CC080C11" MainText="Meetup" Description="Discover events for things you love."/>
+            <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="EventBrite" Background="#CC080C11" MainText="Eventbrite" Description="Online events."/>
+        </Grid>
+        <Grid Grid.Column="4" Background="#CC010102">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Real Estate" Foreground="White" />
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Zillow" Background="#CC080C11" MainText="Zillow" Description="Home has never been more important."/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="Trulia" Background="#CC080C11" MainText="Trulia" Description="Discover a place you w'll love."/>
+            <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="Realton" Background="#CC080C11" MainText="Realtor" Description="Let's find a home that's perfect for you."/>
+        </Grid>
+    </Grid>
+</UserControl>

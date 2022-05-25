@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.WidgetsPresentationDashborad"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" Background="#CC0C1421" d:DesignWidth="1920">
+    <StackPanel Orientation="Vertical" Margin="0,10,0,0" >
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="Tabs">
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0" HorizontalAlignment="Center">
+                <StackPanel HorizontalAlignment="Center" x:Name="TitleZone" Orientation="Horizontal"/>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridCursor" Width="235" Margin="0,10,0,0" Background="#FF2196F3" HorizontalAlignment="Center" Height="3"/>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,50,0,30"  VerticalAlignment="Top" x:Name="ShortcutContent"/>
+    </StackPanel>
+</UserControl>

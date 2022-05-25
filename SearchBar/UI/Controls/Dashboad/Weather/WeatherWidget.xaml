@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Weather.WeatherWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:clock ="clr-namespace:SearchBar.UI.Controls.ClockWidgets"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignWidth="240" d:DesignHeight="340">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition  Width="0.1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <Label  HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="22">
+                Local Weather
+            </Label>
+            <TextBlock x:Name="City" FontSize="15" Foreground="White" Text="{Binding Path=Location.City}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock Name="Temperature" HorizontalAlignment="Left" FontSize="15" Foreground="White" TextWrapping="Wrap" Text="{Binding Path=Temperature}" VerticalAlignment="Top"/>
+                <TextBlock x:Name="Temperature_f" FontSize="15" HorizontalAlignment="Left" Foreground="White" TextWrapping="Wrap" Text="°F" VerticalAlignment="Top"/>
+            </StackPanel>
+        </StackPanel>
+        <Image VerticalAlignment="Top" Source="{Binding Path=IconPath}" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
+            <TextBlock x:Name="Humidity" FontSize="15" HorizontalAlignment="Left" Foreground="White" TextWrapping="Wrap" Text="Humidity : " VerticalAlignment="Top"/>
+            <TextBlock x:Name="HumiValue" FontSize="15" HorizontalAlignment="Left"  Foreground="White" TextWrapping="Wrap"  Text="{Binding Humidity}"  VerticalAlignment="Top"/>
+            <TextBlock x:Name="THumi" FontSize="15" HorizontalAlignment="Left" Foreground="White" TextWrapping="Wrap" Text="%" VerticalAlignment="Top"/>
+        </StackPanel>
+        <clock:WeatherClockWidget Grid.Row="3" Grid.Column="1" x:Name="clockWidget" VerticalAlignment="Top" HorizontalAlignment="Stretch" Foreground="White" SnapsToDevicePixels="true"/>
+    </Grid>
+</UserControl>

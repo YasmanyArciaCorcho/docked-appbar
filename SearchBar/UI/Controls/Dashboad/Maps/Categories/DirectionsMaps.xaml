@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Maps.Categories.DirectionsMaps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:st="clr-namespace:SearchBar.UI.Controls.Shortcut"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Maps.Categories"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920" d:DesignHeight="392">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.02*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.02*"/>
+        </Grid.ColumnDefinitions>
+        <Grid  Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Maps Links" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="GoogleMaps" Background="#CC080C11" MainText="Google Maps" Description="View Google Maps."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Bingmaps" Background="#CC080C11" MainText="Big Maps" Description="View Big Maps."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="WeGo" Background="#CC080C11" MainText="WeGo Maps" Description="View WeGo Maps."/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Flight Paths &amp; Times" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Flighttime" Background="#CC080C11" MainText="Flight Time Calculator" Description="Calculates the flight distance/time for any location in the world."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="FlightView" Background="#CC080C11" MainText="Flight View" Description="A range of tools at your disposal to track your trips and flights."/>
+        </Grid>
+        <Grid  Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Train Paths &amp; Times" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="TrainTravel" Background="#CC080C11" MainText="Train travel in the USA" Description="A beginner's guide."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="OpenRail" Background="#CC080C11" MainText="Open Rail Way Map" Description="Registered public rights of way (public footpaths, bridleways) ..."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Virail" Background="#CC080C11" MainText="Train Times USA" Description="Find times and prices in USA and buy cheap tickets for your trip."/>
+        </Grid>
+    </Grid>
+</UserControl>

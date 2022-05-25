@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Weather.WeatherDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Weather"
+             xmlns:w="clr-namespace:SearchBar.UI.Controls.Dashboad.Weather"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="375.272">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="220"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <w:WeatherWidget HorizontalAlignment="Center" VerticalAlignment="Center" Width="240" x:Name="MainWeather"/>
+        </Grid>
+        <Grid Grid.Column="1" Background="#CC060A0F">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="100*" MinWidth="400"/>
+            </Grid.ColumnDefinitions>
+            <Label HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="22" Grid.Column="0" Margin="32,30,0,0" Height="37" Width="285">
+                <Bold>
+                    Powered by Open Weather
+                </Bold>
+            </Label>
+            <WrapPanel Orientation="Horizontal" Margin="0,30,0,0" Grid.Column="0">
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Today" />
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Next1" />
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Next2" />
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Next3" />
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Next4" />
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Next5" />
+                <w:DailyWeatherWidget Margin="20,78,0,30" x:Name="Next6" />
+            </WrapPanel>
+            <Grid  Background="#CC060A0F" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="41*"/>
+                    <RowDefinition Height="22*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="34*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="34*"/>
+                    <RowDefinition Height="68*"/>
+                    <RowDefinition Height="34*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="53*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="53*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="WeatgerRadar" Background="#CC080C11" MainText="Weather Radar" Description="Visualize past, present and future weather."/>
+                <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="StormTracker" Background="#CC080C11" MainText="Storm Tracke" Description="View live current conditions in and around your area."/>
+                <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Snowfall" Background="#CC080C11" MainText="Snowfall Forecast" Description="Live snowfall map of your area."/>
+                <cb:WebButtonLink Grid.Row="2" Grid.Column="3" x:Name="Climate" Background="#CC080C11" MainText="Climate Map" Description="Powered by UN FAO."/>
+                <cb:WebButtonLink Grid.Row="4" Grid.Column="3" x:Name="GlobalWarming" Background="#CC080C11" MainText="Global Warming" Description="Predicted temperature increase."/>
+                <cb:WebButtonLink Grid.Row="6" Grid.Column="3" x:Name="WindSpeed" Background="#CC080C11" MainText="Wind Speed" Description="This is annual average wind speed."/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

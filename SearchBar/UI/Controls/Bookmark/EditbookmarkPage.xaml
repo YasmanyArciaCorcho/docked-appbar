@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Bookmarks.EditBookmarkPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+          mc:Ignorable="d"
+        Background="#2D2D2D"
+        Height="204.354"
+        Width="474.006">
+    <Border BorderBrush="#7FBBEB" BorderThickness="1">
+        <Grid>
+            <Border CornerRadius="19" BorderThickness="1" Margin="437,10,10,168" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                <Border.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" Value="#EAEBEB"/>
+                                <Setter Property="Border.BorderBrush" Value="#EAEBEB"/>
+                                <Setter Property="Border.BorderThickness" Value="1"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <materialDesign:PackIcon Kind="Close" Foreground="#5F6368" RenderTransformOrigin="0.862,0.68" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Border>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Height="27" Margin="16,52,0,0"   TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="48" FontSize="17"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Height="26" Margin="16,101,0,0"  TextWrapping="Wrap" Text="Url" VerticalAlignment="Top" Width="27" FontSize="17"/>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Height="24" Margin="16,10,0,0"  TextWrapping="Wrap" Text="Edit Bookmark" VerticalAlignment="Top" Width="165" FontSize="17"/>
+            <Button Content="Done" HorizontalAlignment="Left" Height="27" Margin="258,149,0,0" VerticalAlignment="Top" Width="88" Click="Done_Click"/>
+            <Button Content="Remove" HorizontalAlignment="Left" Height="27" Background="#333337" BorderBrush="#FFFFFF" Foreground="White" Margin="366,149,0,0" VerticalAlignment="Top" Width="88" Click="Remove_Click"/>
+            <Border Background="#333337" HorizontalAlignment="Left" Height="31" Margin="82,52,0,0" VerticalAlignment="Top" Width="372">
+                <Border.Style>
+                    <Style>
+                        <Setter Property="Border.BorderBrush" Value="#DADCE0"/>
+                        <Setter Property="Border.Background" Value="#FFFFFF"/>
+                        <Setter Property="Border.BorderThickness" Value="1"/>
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.BorderBrush" Value="#37ACFF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <TextBox Foreground="White" HorizontalAlignment="Center" Background="#333337" FontFamily="Segoe UI" Name="TextBoxName" FontSize="14" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" Height="27" Margin="5,0,0,0"/>
+            </Border>
+            <Border Background="#333337" HorizontalAlignment="Left" Height="31" Margin="82,100,0,0" VerticalAlignment="Top" Width="372">
+                <Border.Style>
+                    <Style>
+                        <Setter Property="Border.BorderBrush" Value="#DADCE0"/>
+                        <Setter Property="Border.Background" Value="#FFFFFF"/>
+                        <Setter Property="Border.BorderThickness" Value="1"/>
+                        <Style.Triggers>
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.BorderBrush" Value="#37ACFF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <TextBox Foreground="White" Background="#333337" HorizontalAlignment="Center" FontFamily="Segoe UI" FontSize="14" Name="TextBoxUrl" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366" Height="27" Margin="5,0,0,0"/>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0098A14F-0D91-4AC3-A2F4-6F021D641426}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Service</RootNamespace>
+    <AssemblyName>SearchBar.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AudioSwitcher.AudioApi, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.3.0.0\lib\net40\AudioSwitcher.AudioApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AudioSwitcher.AudioApi.CoreAudio, Version=3.0.0.209, Culture=neutral, PublicKeyToken=fda5729e2db3a64f">
+      <HintPath>..\packages\AudioSwitcher.AudioApi.CoreAudio.3.0.0.1\lib\net40\AudioSwitcher.AudioApi.CoreAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=9084b9221296229e, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Excel.1.7.5\lib\net40\ExcelApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.24.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.24\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="InTheHand.Net.Personal, Version=3.5.605.0, Culture=neutral, PublicKeyToken=ea38caa273134499">
+      <HintPath>..\packages\32feet.NET.3.5.0.0\lib\net\InTheHand.Net.Personal.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NetOffice, Version=1.7.5.0, Culture=neutral, PublicKeyToken=297f57b43ae7c1de, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Core.1.7.5\lib\net40\NetOffice.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OfficeApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=a39beb0835c43c8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Core.1.7.5\lib\net40\OfficeApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="OutlookApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b118031aaa1097f3, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Outlook.1.7.5\lib\net40\OutlookApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PowerPointApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=f3aefb8851e52dd2, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.PowerPoint.1.7.5\lib\net40\PowerPointApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VBIDEApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=931cec8882205047, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Core.1.7.5\lib\net40\VBIDEApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VisioApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=bfcd37a3a83f1609, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Visio.1.7.5\lib\net40\VisioApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
+    <Reference Include="WordApi, Version=1.7.5.0, Culture=neutral, PublicKeyToken=f66d74591aaf8089, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetOfficeFw.Word.1.7.5\lib\net40\WordApi.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WordToPDF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SearchBar\Asserts\external-dll\WordToPDF.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioServices\ComputerAudioServices.cs" />
+    <Compile Include="AudioServices\IAudioServices.cs" />
+    <Compile Include="Autocomplete\IAutoCompleteProvider.cs" />
+    <Compile Include="Autocomplete\ISearchAutocompleteService.cs" />
+    <Compile Include="Autocomplete\OnlineSuggestion\Google\GoogleSearchSuggestions.cs" />
+    <Compile Include="Autocomplete\OnlineSuggestion\Google\GoogleSearchSuggestionsService.cs" />
+    <Compile Include="Autocomplete\OnlineSuggestion\IOnlineSuggestionService.cs" />
+    <Compile Include="Autocomplete\OnlineSuggestion\OnlineSuggestionService.cs" />
+    <Compile Include="Autocomplete\SearchAutocompleteService.cs" />
+    <Compile Include="Bookmark\BookmarkService.cs" />
+    <Compile Include="Bookmark\IBookmarkService.cs" />
+    <Compile Include="Bookmark\Importer\BookmarkImporterModelAPI.cs" />
+    <Compile Include="Bookmark\Importer\IBookmarkImporter.cs" />
+    <Compile Include="Bookmark\Importer\JsonBookmarkImporter.cs" />
+    <Compile Include="Browser\Browser.cs" />
+    <Compile Include="Browser\BrowserService.cs" />
+    <Compile Include="Browser\IBrowser.cs" />
+    <Compile Include="Browser\IBrowserService.cs" />
+    <Compile Include="Classifields\ClassiffieldsService.cs" />
+    <Compile Include="Classifields\ClassifieldsCategory.cs" />
+    <Compile Include="Classifields\ClassifieldsSearchCategoryProvider.cs" />
+    <Compile Include="Classifields\IClassifieldsSearchCategoryProvider.cs" />
+    <Compile Include="Classifields\IClassifieldsService.cs" />
+    <Compile Include="ComputerManagement\ControlUIServices.cs" />
+    <Compile Include="ComputerManagement\IActiveUserInformation.cs" />
+    <Compile Include="ComputerManagement\IScreenLightService.cs" />
+    <Compile Include="ComputerManagement\ISystemControlUIOpener.cs" />
+    <Compile Include="ComputerManagement\ScreenLightServices.cs" />
+    <Compile Include="ComputerManagement\UserInformationService.cs" />
+    <Compile Include="Converter\FileConverter\BaseFileConverter.cs" />
+    <Compile Include="Converter\FileConverter\FileConverterAPI.cs" />
+    <Compile Include="Converter\FileConverter\IFileConverter.cs" />
+    <Compile Include="Converter\FileConverter\WordToPdfFileConverter.cs" />
+    <Compile Include="Games\Game.cs" />
+    <Compile Include="Games\GamesModelAPI.cs" />
+    <Compile Include="Games\GamesService.cs" />
+    <Compile Include="Games\IGame.cs" />
+    <Compile Include="Games\IGamesService.cs" />
+    <Compile Include="Location\Cities\City.cs" />
+    <Compile Include="Location\Cities\ICitiesProvider.cs" />
+    <Compile Include="Location\Cities\USACitiesProvider.cs" />
+    <Compile Include="Location\LocationModelAPI.cs" />
+    <Compile Include="Location\ILocation.cs" />
+    <Compile Include="Location\ILocationService.cs" />
+    <Compile Include="Location\Location.cs" />
+    <Compile Include="Location\LocationService.cs" />
+    <Compile Include="NetworkServices\INetworkConnection.cs" />
+    <Compile Include="NetworkServices\NetworkConnection.cs" />
+    <Compile Include="NetworkServices\INetworkConnectionsProvider.cs" />
+    <Compile Include="NetworkServices\NetworkServices.cs" />
+    <Compile Include="NetworkServices\NetworkStatus.cs" />
+    <Compile Include="NetworkServices\NetworkTypes.cs" />
+    <Compile Include="NetworkServices\WlanClient.cs" />
+    <Compile Include="NetworkServices\WlanWindowsBinding.cs" />
+    <Compile Include="News\INewsService.cs" />
+    <Compile Include="News\News.cs" />
+    <Compile Include="News\NewsModelAPI.cs" />
+    <Compile Include="News\NewsService.cs" />
+    <Compile Include="Office\IOfficeService.cs" />
+    <Compile Include="Office\OfficeLaunchApp.cs" />
+    <Compile Include="Office\OfficeLauncher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipes\IRecipe.cs" />
+    <Compile Include="Recipes\IRecipesService.cs" />
+    <Compile Include="Recipes\Recipe.cs" />
+    <Compile Include="Recipes\RecipesModelAPI.cs" />
+    <Compile Include="Recipes\RecipesService.cs" />
+    <Compile Include="RecycleBin\IRecycleBinService.cs" />
+    <Compile Include="RecycleBin\RecycleBinService.cs" />
+    <Compile Include="ShortcutPackage\BasicCommonVerticalLinksService.cs" />
+    <Compile Include="ShortcutPackage\ICommonVerticalLinksService.cs" />
+    <Compile Include="ShortcutPackage\IShortcutPackage.cs" />
+    <Compile Include="ShortcutPackage\IShortcutPackageService.cs" />
+    <Compile Include="ShortcutPackage\ShortcutPackage.cs" />
+    <Compile Include="ShortcutPackage\ShortcutPackageModelAPI.cs" />
+    <Compile Include="ShortcutPackage\ShortcutPackageService.cs" />
+    <Compile Include="Location\States\IStateProvider.cs" />
+    <Compile Include="Location\States\State.cs" />
+    <Compile Include="Location\States\USAStateProvider.cs" />
+    <Compile Include="Weather\WeatherModelAPI.cs" />
+    <Compile Include="Weather\IWeather.cs" />
+    <Compile Include="Weather\IWeatherService.cs" />
+    <Compile Include="Weather\Weather.cs" />
+    <Compile Include="Weather\WeatherService.cs" />
+    <Compile Include="WindowsTasksView\IWindowsTaskViewer.cs" />
+    <Compile Include="WindowsTasksView\WindowsTaskViewer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SearchBar.Common\SearchBar.Common.csproj">
+      <Project>{2FABFB79-061C-4183-A6AB-FDFDFC2C5245}</Project>
+      <Name>SearchBar.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SearchBar.Stores\SearchBar.Stores.csproj">
+      <Project>{9349303F-7635-43AF-AF4C-360E521FA859}</Project>
+      <Name>SearchBar.Stores</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

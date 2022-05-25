@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.MainDashBoard"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:c="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:scp="clr-namespace:SearchBar.UI.Controls.ShortCut"
+             xmlns:cw="clr-namespace:SearchBar.UI.Controls.ClockWidgets"
+             xmlns:ac="clr-namespace:SearchBar.UI.Controls.Base.Accordion"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Visibility="Visible"  Background="#CC0C1421" Height="430">
+    <Canvas x:Name="RootCanvas" MinHeight="420">
+        <DockPanel MinHeight="420">
+            <Grid Grid.Column="0" Width="220" x:Name="LeftGridColumn" DockPanel.Dock="Left" Margin="40,20,0,0" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="205*" MinHeight="100"/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Popular links" Grid.Column="0" Grid.Row="0" FontSize="22"/>
+                <scp:ShortCutPackage x:Name="ShortCutZone" Grid.Column="0" Grid.Row="1" Height="Auto" Width="Auto"/>
+                <cw:MainDashboardClockWidget Grid.Row="2" Margin="0,50,0,0" VerticalAlignment="Center" x:Name="TodayWeather" Background="Transparent" Height="180" Width="Auto"/>
+            </Grid>
+            <Grid DockPanel.Dock="Right" x:Name="WindowsGrid" HorizontalAlignment="Right" Margin="0,0,40,40"  Width="170">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Windows Tools" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" FontSize="22" Margin="0,20,0,0"/>
+                <Grid HorizontalAlignment="Right" x:Name="WindowsGridTools" Height="360" Grid.Row="1">
+                    <ac:AccordionControl/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Bottom">
+                        <StackPanel x:Name="MenuProductStackPanel" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                            <c:CustomButton VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="40" x:Name="About"
+                      ToolTip="About" SnapsToDevicePixels="true" Command="{Binding OpenBrowser}"  Click="About_Click">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon Kind="About" Foreground="White" Width="20" Height="20"/>
+                                <TextBlock Margin="5, 3, 5, 5" Foreground="White" Text="About"/>
+                            </StackPanel>
+                        </c:CustomButton>
+                        <c:CustomButton VerticalAlignment="Bottom" Height="40" HorizontalAlignment="Left" x:Name="CloseBtn" 
+                      ToolTip="Close" SnapsToDevicePixels="true" Click="CloseBtn_Click">
+                                <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <materialDesign:PackIcon Kind="Close" Width="20" Height="29" Foreground="White"/>
+                                    <TextBlock Text="Close" Margin="3" Foreground="White"/>
+                                </StackPanel>
+                            </c:CustomButton>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Grid  x:Name="BrowserGrid" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" HorizontalAlignment="Center" x:Name="RootGrid" Margin="0,20,0,0"  VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="80*"/>
+                    </Grid.RowDefinitions>
+                    <Grid  Grid.Column="1" Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Bookmarks" Grid.Column="0" FontSize="22"/>
+                        <Label Content="Top sites visited" HorizontalAlignment="Left" Grid.Column="1" FontSize="22" Margin="10,0,0,0" />
+                    </Grid>
+                    <Grid  Grid.Column="1"  Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Grid.Column="0" Kind="Star" MouseLeftButtonDown="BookmarkImage_MouseLeftButtonDown" Name="BookmarkImage" Foreground="White" Width="20" Margin="0,10,0,0" Height="20" ToolTip="Add new Bookmark..." MouseMove="StarBookmark_MouseMove" MouseLeave="StarBookmark_MouseLeave"/>
+                        <ScrollViewer Grid.Column="0" HorizontalAlignment="Left" Style="{StaticResource LeftScrollViewer}" x:Name="BookmarkZoneScrollViewer" VerticalScrollBarVisibility="Auto" Height="40" Margin="20,0,0,0">
+                            <WrapPanel  Name="BookmarkZone" Orientation="Horizontal"/>
+                        </ScrollViewer>
+                        <ScrollViewer HorizontalAlignment="Left" Height="40" Grid.Column="1" Style="{StaticResource LeftScrollViewer}" x:Name="TopSitesZoneScrollViewer" VerticalScrollBarVisibility="Auto">
+                            <WrapPanel Orientation="Horizontal" x:Name="TopSitesZonePanel"/>
+                        </ScrollViewer>
+                    </Grid>
+                    <Label Content="News" Grid.Column="1" Grid.Row="2" FontSize="22"/>
+                    <ScrollViewer HorizontalAlignment="Left" Style="{StaticResource LeftScrollViewer}" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="3">
+                        <StackPanel x:Name="NewsZoneStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Top" Orientation="Horizontal" />
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </DockPanel>
+    </Canvas>
+</UserControl>

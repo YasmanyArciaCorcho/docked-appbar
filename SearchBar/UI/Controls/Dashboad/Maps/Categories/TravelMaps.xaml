@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Maps.Categories.TravelMaps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Maps.Categories"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920" d:DesignHeight="392">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.02*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.02*"/>
+        </Grid.ColumnDefinitions>
+        <Grid  Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Travel" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Booking" Background="#CC080C11" MainText="Booking" Description="Find deals on hotels."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Kayak" Background="#CC080C11" MainText="Kayak" Description="Search hundreds of car sites."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Expedia" Background="#CC080C11" MainText="Expedia" Description="We have cabins and villas, too."/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Hotels" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Hotels" Background="#CC080C11" MainText="Hotels" Description="Hotel.com."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Marriott" Background="#CC080C11" MainText="Marriott" Description="Enjoy our lowest rates."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Vrbo" Background="#CC080C11" MainText="Vrbo" Description="Find spaces that suit your style."/>
+        </Grid>
+        <Grid  Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Car Rentals" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Alamo" Background="#CC080C11" MainText="Alamo" Description="Collection of travel stories."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="NationalCar" Background="#CC080C11" MainText="National car" Description="Car rental."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Enterprise" Background="#CC080C11" MainText="Enterprise" Description="Reserve a vehicle."/>
+        </Grid>
+        <Grid  Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Places To Eat" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Yelp" Background="#CC080C11" MainText="Yelp" Description="Search in maps."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Tripadvisor" Background="#CC080C11" MainText="Tripadvisor" Description="Find your perfect restaurant."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="YellowPages" Background="#CC080C11" MainText="Yellow Pages" Description="Popular cuisines."/>
+        </Grid>
+        <Grid  Grid.Column="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Travel Guides" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="TravelandLeisure" Background="#CC080C11" MainText="Travel &amp; Leisure" Description="Travel Guides."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Nomadic" Background="#CC080C11" MainText="Nomadic MATT" Description="Travel Guides."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Fodors" Background="#CC080C11" MainText="Fodors" Description="Travel Guides."/>
+        </Grid>
+        <Grid  Grid.Column="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Travel Blogs" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="DanFlaying" Background="#CC080C11" MainText="Dan Flying Solo" Description="Getting lost in places."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="BrokenBackpack" Background="#CC080C11" MainText="A Broken Backpack" Description="Start your travel adventures."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Lili" Background="#CC080C11" MainText="Lili's Travel Plans" Description="It's the stories of the people."/>
+        </Grid>
+    </Grid>
+</UserControl>

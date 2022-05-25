@@ -1,0 +1,90 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:base="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             x:Class="SearchBar.UI.Controls.Shortcut.ActionTrayShortcut"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Border CornerRadius="10" Padding="10">
+        <Grid>
+            <StackPanel Orientation="Vertical">
+                <DockPanel LastChildFill="True">
+                    <Border DockPanel.Dock="Left" CornerRadius="10" Background="DarkSlateGray" Margin="0, 0, 5, 0">
+                        <base:CustomButton Click="SettingsBtn_OnClick" x:Name="SettingsBtn" Margin="0" Width="40" SnapsToDevicePixels="true" ToolTip="Settings" Height="30">
+                            <materialDesign:PackIcon Kind="Spanner" x:Name="SettingsImage" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Height="20" Width="20"/>
+                        </base:CustomButton>
+                    </Border>
+                    <Border CornerRadius="10" Background="DarkSlateGray">
+                        <base:CustomButton Click="UserBtn_OnClick" Margin="0" SnapsToDevicePixels="true" ToolTip="User Settings">
+                            <DockPanel LastChildFill="True" Height="30">
+                                <materialDesign:PackIcon Kind="User" DockPanel.Dock="Left" x:Name="UserImage" Margin="5, 0, 0, 0" Foreground="White" Height="20" Width="20" VerticalAlignment="Center"/>
+                                <Label VerticalAlignment="Center" Content="{Binding UserName}" />
+                            </DockPanel>
+                        </base:CustomButton>
+                    </Border>
+                </DockPanel>
+                <Border CornerRadius="10" Background="DarkSlateGray" Margin="0, 5, 0, 0">
+                    <DockPanel LastChildFill="True">
+                        <materialDesign:PackIcon Kind="VolumeHigh" Margin="5, 0, 5, 0" 
+                                                     DockPanel.Dock="Left" Foreground="White" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Slider Value="{Binding VolumeSetting}" VerticalAlignment="Center" Maximum="100" Minimum="1" Margin="0, 0, 5, 0" />
+                    </DockPanel>
+                </Border>
+                <Border CornerRadius="10" Background="DarkSlateGray" Margin="0, 5, 0, 0">
+                    <DockPanel LastChildFill="True">
+                        <materialDesign:PackIcon Kind="LightbulbOnOutline" Margin="5, 0, 5, 0" 
+                                                     DockPanel.Dock="Left" Foreground="White" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Slider Value="{Binding LightSetting}" VerticalAlignment="Center" Maximum="100" Minimum="1" Margin="0, 0, 5, 0" />
+                    </DockPanel>
+                </Border>
+                <Border CornerRadius="10" Background="DarkSlateGray" Margin="0, 5, 0, 0">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Horizontal" DockPanel.Dock="Left" Margin="5">
+                            <base:CustomButton Click="media_play_OnMouseDown" SnapsToDevicePixels="true" ToolTip="Play" DockPanel.Dock="Left" Margin="0, 0, 5, 0">
+                                <materialDesign:PackIcon Kind="Play" Foreground="White" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </base:CustomButton>
+                            <base:CustomButton Click="media_stop_OnMouseDown" SnapsToDevicePixels="true" ToolTip="Stop" DockPanel.Dock="Right" Margin="0, 0, 5, 0">
+                                <materialDesign:PackIcon Kind="Stop" Foreground="White" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </base:CustomButton>
+                        </StackPanel>
+                        <Border Margin="5" DockPanel.Dock="Right" Height="40" Width="40" CornerRadius="5" Background="DarkCyan">
+                            <base:CustomButton Click="media_open_OnMouseDown" SnapsToDevicePixels="true" ToolTip="Select Audio" DockPanel.Dock="Right" Margin="0, 0, 5, 0">
+                                <materialDesign:PackIcon Kind="Folder" Foreground="White" Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </base:CustomButton>
+                        </Border>
+                        <StackPanel Orientation="Vertical">
+                            <MediaElement x:Name="AudioFile" Height="76" LoadedBehavior="Manual"  />
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+                <Border CornerRadius="10" Background="DarkSlateGray" Margin="0, 5, 0, 0">
+                    <DockPanel LastChildFill="True">
+                        <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Margin="5">
+                            <base:CustomButton x:Name="WifiBtn" Click="WifiBtn_OnClick" Margin="5, 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                                   SnapsToDevicePixels="true" ToolTip="{Binding ActiveWifi}">
+                                <DockPanel LastChildFill="True" Height="40" Width="120">
+                                    <Border Height="30" Width="30" CornerRadius="30" Background="Green" DockPanel.Dock="Left">
+                                        <materialDesign:PackIcon Kind="Wifi" x:Name="WifiImage" Foreground="White" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Label VerticalAlignment="Center" HorizontalAlignment="Left" Content="{Binding ActiveWifi}" />
+                                </DockPanel>
+                            </base:CustomButton>
+                            <base:CustomButton x:Name="ActiveBlueTooth" Click="ActiveBlueTooth_OnClick" Margin="5, 0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                                   SnapsToDevicePixels="true" ToolTip="{Binding ActiveBlueTooth}">
+                                <DockPanel LastChildFill="True" Height="40" Width="120">
+                                    <Border Height="30" Width="30" CornerRadius="30" Background="DodgerBlue" DockPanel.Dock="Left">
+                                        <materialDesign:PackIcon Kind="Bluetooth" x:Name="BluetoothImage"  Foreground="White" Height="15" Width="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </Border>
+                                    <Label VerticalAlignment="Center" HorizontalAlignment="Left" Content="{Binding ActiveBlueTooth}"/>
+                                </DockPanel>
+                            </base:CustomButton>
+                        </StackPanel>
+                    </DockPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Notes.NotesDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Notes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:ncontrol="clr-namespace:SearchBar.UI.Controls.Notes"
+             mc:Ignorable="d" 
+             Height="500"  d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="50*" MinWidth="400"/>
+            <ColumnDefinition  Width="145*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="0.05*"/>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="0.05*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="61*" MaxHeight="80"/>
+                <RowDefinition Height="22*"/>
+                <RowDefinition Height="299*"/>
+                <RowDefinition Height="14*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Image x:Name="logo" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left"  Margin="7,0,0,0" Grid.Row="1" TextWrapping="Wrap" FontSize="22" Text="Notes" Foreground="White" VerticalAlignment="Bottom"/>
+            </WrapPanel>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="3.5*"/>
+                    <ColumnDefinition  Width="6.5*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Filter notes by update date" FontSize="18" Foreground="White" VerticalAlignment="Bottom"/>
+                    <RadioButton x:Name="SpecificDay" GroupName="DateSelection" Foreground="White" Margin="0,20,0,0">Specific day</RadioButton>
+                    <RadioButton x:Name="BeforeDate" GroupName="DateSelection" Foreground="White" Margin="0,5,0,0">Before date</RadioButton>
+                    <RadioButton x:Name="AfterDate" GroupName="DateSelection" Foreground="White" Margin="0,5,0,0">After date</RadioButton>
+                    <RadioButton x:Name="AnyDate" GroupName="DateSelection" IsChecked="True" Foreground="White" Margin="0,5,0,0">Any date</RadioButton>
+                </StackPanel>
+                <Viewbox  HorizontalAlignment="Right" Grid.Column="1" Width="234">
+                    <Calendar x:Name="NotesCalendar" Background="#E15F0C"/>
+                </Viewbox>
+            </Grid>
+            <WrapPanel Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Height="32" Margin="0,3,0,10">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Filter notes by text" FontSize="18" Foreground="White" VerticalAlignment="Bottom"/>
+                <TextBox  x:Name="TextPattern" HorizontalAlignment="Left" Margin="30,0,0,0" TextWrapping="Wrap" FontSize="18" Text="" Foreground="White" VerticalAlignment="Top" Width="269"/>
+            </WrapPanel>
+            <Button Grid.Row="6" Grid.Column="1" Content="Search notes" VerticalAlignment="Top" x:Name="ButtonSearch" Click="ButtonSearch_Click" />
+        </Grid>
+        <Grid Background="#CC162742" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20*" MinHeight="40"/>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="181*"/>
+                <RowDefinition Height="10*" MinHeight="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" FontSize="22" Text="Notes List" Foreground="White" VerticalAlignment="Top" Height="29" Width="113"/>
+            <c:CustomButton Grid.Column="1" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="40" Height="40" x:Name="NewNoteButton" 
+                      ToolTip="Add new note" SnapsToDevicePixels="true" Click="NewNoteButton_Click">
+                <materialDesign:PackIcon Kind="Plus" Foreground="White" Width="20" Height="20"/>
+            </c:CustomButton>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30*"/>
+                    <ColumnDefinition Width="70*"/>
+                </Grid.ColumnDefinitions>
+                <ScrollViewer HorizontalAlignment="Left" Grid.Column="0" VerticalAlignment="Top"
+                              Width="340"
+                              Style="{StaticResource LeftScrollViewer}"
+                              x:Name="NotesListZoneScrollViewer" 
+                              VerticalScrollBarVisibility="Auto" 
+                              HorizontalScrollBarVisibility="Auto">
+                        <StackPanel Background="#FFFFFF" x:Name="NoteListZonePanel" Orientation="Vertical" HorizontalAlignment="Right">
+                        </StackPanel>
+                    </ScrollViewer>
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+                    <ScrollViewer HorizontalAlignment="Center" VerticalAlignment="Bottom"  
+                              Width="940"
+                              Height="265"
+                              Style="{StaticResource LeftScrollViewer}"
+                              x:Name="OpensNotesZoneScrollViewer" 
+                              VerticalScrollBarVisibility="Auto" 
+                              HorizontalScrollBarVisibility="Auto" Margin="0,10,0,0">
+                        <WrapPanel Orientation="Horizontal" x:Name="OpensNotesPanel" Width="920"/>
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

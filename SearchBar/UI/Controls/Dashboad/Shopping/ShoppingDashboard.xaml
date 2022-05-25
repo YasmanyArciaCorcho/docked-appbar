@@ -1,0 +1,96 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Shopping.ShoppingDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Shopping"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            xmlns:st="clr-namespace:SearchBar.UI.Controls.Shortcut"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920" Height="441">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.06*" MinWidth="380"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34*"/>
+                <RowDefinition Height="62*"/>
+                <RowDefinition Height="42*"/>
+                <RowDefinition Height="47*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="30*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Image x:Name="logo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="58"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Bottom" TextWrapping="Wrap" FontSize="22" Text="Go shopping now" Foreground="White"/>
+            </WrapPanel>
+            <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="What are you looking for?" FontSize="18" Foreground="White" VerticalAlignment="Bottom" Height="24"/>
+            <WrapPanel  Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom" Height="33" >
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Keyword" FontSize="18" Foreground="White" VerticalAlignment="Bottom"/>
+                <TextBox  x:Name="Keyword" HorizontalAlignment="Left"  TextWrapping="Wrap" FontSize="18" Text="" Foreground="White" VerticalAlignment="Top" Margin="17,0,0,0" Width="230" PreviewKeyDown="Keyword_PreviewKeyDown"/>
+            </WrapPanel>
+            <Button Grid.Row="8" Grid.Column="1" Content="Search in Amazon" VerticalAlignment="Top" x:Name="ButtonSearch"/>
+        </Grid>
+        <Grid Background="#CC060A0F" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Shopping Sites" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Amazon" Background="#CC080C11" MainText="Amazon" Description="It ships over 45 million products around the world."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Walmart" Background="#CC080C11" MainText="Walmart" Description="Shop smart, stay safe."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="HomeDepot" Background="#CC080C11" MainText="The Home Depot" Description="ShopHelping your to-dos get done."/>
+            <cb:WebButtonLink Grid.Row="8" Grid.Column="1" x:Name="Ebay" Background="#CC080C11" MainText="Ebay" Description="Buy, sell and save with the eBay."/>
+        </Grid>
+        <Grid Background="#CC010102" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="22" Text="Coupons" Foreground="White" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Pricegrabber" Background="#CC080C11" MainText="Pricegrabber" Description="Shop and save on millions of products."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Retailmenot" Background="#CC080C11" MainText="RetailMeNot" Description="Shop today's trending deals and save big."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Shopzila" Background="#CC080C11" MainText="Shopzila" Description="Ready your home for outdoor entertaining."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Groupon" Background="#CC080C11" MainText="Groupon" Description="Find great deals on all the best stuff to eat, see."/>
+        </Grid>
+    </Grid>
+</UserControl>

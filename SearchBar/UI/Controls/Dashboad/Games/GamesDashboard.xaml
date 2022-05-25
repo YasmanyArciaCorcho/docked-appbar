@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Games.GamesDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Games"
+             mc:Ignorable="d" 
+             Height="450" d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*" MinWidth="200"/>
+            <ColumnDefinition  Width="30*"/>
+            <ColumnDefinition  Width="80*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition  Width="75*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="63*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="98*"/>
+                <RowDefinition Height="52*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="31*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Image x:Name="logo"/>
+                <TextBlock TextWrapping="Wrap" Margin="7,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="22" Text="Games" Foreground="White"/>
+            </WrapPanel>
+            <TextBlock Grid.Row="3"  VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="22" Foreground="White" Width="172" Grid.Column="1">
+                   <Bold><Run Text="Same for Games"/></Bold>
+            </TextBlock>
+            <ComboBox x:Name="GamesCategoryComboBox" Grid.Column="1" Grid.Row="4" VerticalAlignment="Bottom" ItemsSource="{Binding GamesCategories}" Height="28"/>
+            <TextBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" x:Name="GameFilter" TextWrapping="Wrap" FontSize="18" Text="" Foreground="White" Height="33" PreviewKeyDown="GameFilter_PreviewKeyDown"/>
+            <Button Height="Auto"  Grid.Row="8" Grid.Column="1" Content="Find Games" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown"/>
+        </Grid>
+        <Grid Grid.Column="1" Background="#CC060A0F">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition  Width="80*"/>
+                <ColumnDefinition Width="15*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29*"/>
+                    <RowDefinition Height="15*"/>
+                    <RowDefinition Height="160*"/>
+                    <RowDefinition Height="21*"/>
+                </Grid.RowDefinitions>
+                <WrapPanel  Grid.Row="0" Orientation="Horizontal"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="32" Width="207">
+                    <TextBlock TextWrapping="Wrap" FontSize="24" Text="Games found" Foreground="White" />
+                    <Border  Background="#2196F3" CornerRadius="100" Width="50" HorizontalAlignment="Left" Margin="15,0,0,0" >
+                        <TextBlock Text="888" VerticalAlignment="Center" x:Name="TotalGamesText" HorizontalAlignment="Center" FontSize="24" Foreground="White"/>
+                    </Border>
+                </WrapPanel>
+                <ScrollViewer HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Stretch" Grid.Row="2" Style="{StaticResource LeftScrollViewer}">
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" x:Name="GamesListZone"/>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="2" Background="#CC010102">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <Grid  Background="#CC060A0F" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Free Games" Foreground="White" />
+                <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Backgammon" Background="#CC080C11" MainText="Backgammon" Description="A backgammon set, consisting of a board, two sets of 15 checkers, two pairs of dice, a doubling cube, and dice cups."/>
+                <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="ThreeGates" Background="#CC080C11" MainText="Three Gates Solitaire" Description="Enjoy this fun 3 card version of solitaire that adds bonus features and added challenge to the classic card game."/>
+                <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="Spider" Background="#CC080C11" MainText="Spider Solitaire" Description="Like traditional solitaire, the goal is to clear away all cards from the table. However, there are some key differences."/>
+            </Grid>
+            <Grid  Background="#CC060A0F" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="1.6*"/>
+                    <RowDefinition Height="0.8*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="80*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Mahjong" Background="#CC080C11" MainText="Mahjong" Description="Mahjong is a game of skill, strategy, and calculation, and it involves a degree of chance."/>
+                <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="WarFrame" Background="#CC080C11" MainText="WARFRAME" Description="Join more than 50 million players in this fast-paced, third-person action shooter. Loot up, load out and carve your own path through the sprawling Origin System."/>
+                <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="WorldofTanks" Background="#CC080C11" MainText="World of TANKS" Description="World of Tanks is an epic online multiplayer game featuring authentic tanks from the mid-20th century."/>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

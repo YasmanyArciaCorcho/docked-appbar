@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.ClockWidgets.WeatherClockWidget"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.ClockWidgets"
+             mc:Ignorable="d" d:DesignHeight="30.644" d:DesignWidth="299.178">
+    <StackPanel>
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Name="Date" Content="12/12/2020" FontSize="15" FontFamily="Microsoft YaHei UI Light"/>
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Name="Time" Content="88:88AM" FontSize="15" FontFamily="Microsoft YaHei UI Light"/>
+        </Grid>
+    </StackPanel>
+</UserControl>

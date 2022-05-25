@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Base.NewsFormatControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Height="225.294" Width="176.5">
+    <FrameworkElement.Resources>
+        <Style x:Key="BorderInStyle" TargetType="{x:Type Border}">
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="BorderBrush" Value="#7FBBEB"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </FrameworkElement.Resources>
+    <StackPanel>
+        <Border Style="{StaticResource BorderInStyle}" BorderThickness="2" Height="200">
+            <StackPanel Background="#B2000000" >
+                <TextBlock x:Name="Title" Foreground="White" Margin="10,10,10,15" TextWrapping="Wrap" Text="{Binding Path=Title}"/>
+                <Image Name="Image" Margin="15,2,15,5"/>
+                <TextBlock Name="Body" Foreground="#CDCDCD" Margin="15,10,15,0" TextWrapping="Wrap" Text="{Binding Path=Body}"/>
+            </StackPanel>
+        </Border>
+        <TextBlock  Name="Publisher" Foreground="#CDCDCD" TextWrapping="Wrap" Margin="10,2,10,0" Text="{Binding Path=Publisher}"/>
+    </StackPanel>
+</UserControl>

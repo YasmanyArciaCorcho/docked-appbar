@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Recipes.RecipesDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:search="clr-namespace:SearchBar.UI.Controls.SearchTextBox"
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Recipes"
+             xmlns:st="clr-namespace:SearchBar.UI.Controls.Shortcut"
+             mc:Ignorable="d" 
+             Height="450" d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition  Width="400*"/>
+            <ColumnDefinition  Width="400*"/>
+            <ColumnDefinition  Width="400*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition  Width="434*"/>
+                <ColumnDefinition  Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="1.3*"/>
+                <RowDefinition Height="1.3*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Image x:Name="logo"/>
+            </WrapPanel>
+            <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" TextWrapping="Wrap" FontSize="22" Foreground="White" Height="28">
+            <Bold><Run Text="Find recipes from top sites!"/></Bold>
+            </TextBlock>
+            <StackPanel Orientation="Vertical"  Grid.Row="3" Grid.Column="1">
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="Food"  Background="#CC080C11" Margin="0,0,0,0" Height="54" Width="99">
+                        <Image x:Name="foodImage" Margin="4"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="AllRecipes"  Background="#CC080C11" Margin="0,0,0,0" Height="54" Width="99">
+                        <Image x:Name="allrecipesImage" Margin="4"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="FoodNetwork"  Background="#CC080C11" Margin="0,0,0,0" Height="54" Width="99">
+                        <Image x:Name="foodnetworkImage" Margin="4"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="RecipeSearch"  Background="#CC080C11" Margin="0,0,0,0" Height="54" Width="99">
+                        <Image  x:Name="recipesearchImage" Margin="4"/>
+                    </Border>
+                </WrapPanel>
+                <search:SearchTextBox Grid.Row="5" Grid.Column="1" x:Name="SearchBar"  DataContext="{Binding SearchBarViewModel}" SnapsToDevicePixels="true" VerticalAlignment="Center" Margin="0,14,0,0"/>
+            </StackPanel>
+        </Grid>
+        <Grid  Background="#CC060A0F" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Healthy Living" Foreground="White" />
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Keto" Background="#CC080C11" MainText="KETO dieat plan" Description="Put your health first. Get your personalized KETO diet plan."/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="Noom" Background="#CC080C11" MainText="Noom" Description="Find out what's possible with Noom's psychology-based evaluation."/>
+            <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="EatingWell" Background="#CC080C11" MainText="EatingWell" Description="Dig into recipes featuring seasonal produce, including tomatoes, corn, zucchini, watermelon and more."/>
+        </Grid>
+        <Grid  Background="#CC060A0F" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Delivery and Take-out Services" Foreground="White" />
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="Uber" Background="#CC080C11" MainText="Uber Eats Home" Description="Hungry? Find the food you crave and order from restaurants easily with the Uber Eats."/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="Doordash" Background="#CC080C11" MainText="Doordash" Description="From your neighborhood sushi spot to the burger and fries you crave, choose from over 300,000 local and national favorites across the U.S. and Canada."/>
+            <cb:WebButtonLink Grid.Row="5" Grid.Column="1" x:Name="PostMates" Background="#CC080C11" MainText="Postmates" Description="Food, drinks, groceries, and more available for delivery and pickup."/>
+        </Grid>
+        <Grid Grid.Column="3" Background="#CC010102">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="163*"/>
+                <RowDefinition Height="25*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0" TextWrapping="Wrap" FontSize="24" Text="Our daily pick for you" Foreground="White"/>
+            <ScrollViewer HorizontalAlignment="Left" Grid.Row="1" Style="{StaticResource LeftScrollViewer}" VerticalAlignment="Top"  x:Name="DailyPickForYouScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Width="193">
+                <WrapPanel Orientation="Vertical" x:Name="DailyPickForYouZone">
+                </WrapPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Maps.Categories.RoadMaps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Maps.Categories"
+             mc:Ignorable="d" 
+               d:DesignWidth="1920" d:DesignHeight="392">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.02*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.02*"/>
+        </Grid.ColumnDefinitions>
+        <Grid  Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Gas Prices &amp; Location" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="GasBuddy" Background="#CC080C11" MainText="GasBuddy" Description="Gas Price Map."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Autoblog" Background="#CC080C11" MainText="Autoblog" Description="Gas stations by state."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Fuel" Background="#CC080C11" MainText="Fueleconomy" Description="Source for fuel economy information."/>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Auto Insurance Tips" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="GEICO" Background="#CC080C11" MainText="Geico" Description="The Insurance Savings You Expect."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="MyQuickMaps" Background="#CC080C11" MainText="MyQuickMaps" Description="How much you're paying for Auto Insurance?"/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="LibertyMutual" Background="#CC080C11" MainText="Liberty Mutual" Description="Only pay for what you need."/>
+        </Grid>
+        <Grid  Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Road Side Assistance" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Yelp" Background="#CC080C11" MainText="Yelp" Description="Best Roadside Assistance."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="AAA" Background="#CC080C11" MainText="AAA" Description="Travel Information from AAA."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="RoadSide" Background="#CC080C11" MainText="Road Side Assistance" Description="Towing near you."/>
+        </Grid>
+        <Grid  Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Traffic Conditions" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Waze" Background="#CC080C11" MainText="Waze" Description="Traffic Conditions."/>
+        </Grid>
+    </Grid>
+</UserControl>

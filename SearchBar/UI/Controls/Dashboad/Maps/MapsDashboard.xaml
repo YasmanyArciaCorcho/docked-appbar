@@ -1,0 +1,105 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Maps.MapsDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920"   Height="392">
+    <FrameworkElement.Resources>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  MinWidth="370" Width="19*"/>
+            <ColumnDefinition  Width="77*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.05*"/>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="0.05*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel  Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                <Image x:Name="logo"/>
+                <TextBlock TextWrapping="Wrap" Margin="7,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="22" Text="Watch your route" Foreground="White"/>
+            </WrapPanel>
+            <TextBlock Grid.Row="2" VerticalAlignment="Bottom" Grid.Column="1" TextWrapping="Wrap" Text="Where do you want to go?" FontSize="18" Foreground="White"/>
+            <StackPanel  Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Starting from" FontSize="18" Foreground="White"/>
+                <TextBox MinWidth="220" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,0" x:Name="StartAddress" TextWrapping="Wrap" FontSize="18" Text="" Foreground="White" PreviewKeyDown="GoAddress_PreviewKeyDown" Width="146"/>
+            </StackPanel>
+            <StackPanel  Grid.Row="4" VerticalAlignment="Bottom" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock TextWrapping="Wrap" Text="Going to" HorizontalAlignment="Left" FontSize="18" Foreground="White"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Bottom"  MinWidth="220"  Margin="45,0,0,0" x:Name="GoAddress" TextWrapping="Wrap" FontSize="18" Text="" Foreground="White" PreviewKeyDown="GoAddress_PreviewKeyDown"/>
+            </StackPanel>
+            <StackPanel  Grid.Row="6" VerticalAlignment="Bottom" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Left" TextWrapping="Wrap" Text="I'm traveling in" FontSize="18" Foreground="White"/>
+                <Grid HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3.3*"/>
+                        <ColumnDefinition  Width="3.3*"/>
+                        <ColumnDefinition  Width="3.3*"/>
+                    </Grid.ColumnDefinitions>
+                    <materialDesign:PackIcon Margin="15,0,0,0" Grid.Column="0" Kind="Car" x:Name="CarIcon" Foreground="White" Height="Auto" Width="Auto" MouseLeftButtonDown="PackIcon_MouseLeftButtonDown_car" />
+                    <materialDesign:PackIcon Margin="15,0,0,0" Grid.Column="1" Kind="Walk" x:Name="WalkIcon" Foreground="White" Height="Auto" Width="Auto"  MouseLeftButtonDown="PackIcon_MouseLeftButtonDown_walk" />
+                    <materialDesign:PackIcon Margin="15,0,0,0" Grid.Column="2" Kind="Bus" x:Name="BusIcon"  Foreground="White" Height="Auto" Width="Auto"  MouseLeftButtonDown="PackIcon_MouseLeftButtonDown_airplane"/>
+                </Grid>
+            </StackPanel>
+            <Button Height="35"  Grid.Row="8" Grid.Column="1" Content="See on google" Click="Button_Click" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid  Background="#CC060A0F" Grid.Column="1" x:Name="RootMapsGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="0.5*"/>
+                    <ColumnDefinition  Width="4*"/>
+                    <ColumnDefinition  Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="1.5*"/>
+                        <ColumnDefinition  Width="1.5*"/>
+                        <ColumnDefinition  Width="1.5*"/>
+                        <ColumnDefinition  Width="1.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Directions">
+                        <StackPanel x:Name="DirectionsPanel">
+                            <TextBlock Text="Maps &amp; Directions" Uid="0" Foreground="White" FontSize="18"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Travel">
+                        <StackPanel x:Name="TravelPanel">
+                            <TextBlock Text="Travel &amp; Places To Go" Uid="1" Foreground="White" FontSize="18"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Road">
+                        <StackPanel x:Name="RoadPanel">
+                            <TextBlock Text="Road Maps &amp; Traffic" Uid="2" Foreground="White" FontSize="18"/>
+                        </StackPanel>
+                    </Border>
+                    <Border Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Earth">
+                        <StackPanel x:Name="EartPanel">
+                            <TextBlock Text="Earth &amp; Satellites" Uid="3" Foreground="White" FontSize="18"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

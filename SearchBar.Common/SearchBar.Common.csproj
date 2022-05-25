@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2FABFB79-061C-4183-A6AB-FDFDFC2C5245}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>SearchBar.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.11.24.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.24\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.7.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataStructures\KMP\KMP.cs" />
+    <Compile Include="GarbageCollector\ICollectionGarbageCollector.cs" />
+    <Compile Include="GarbageCollector\SplayCollection.cs" />
+    <Compile Include="IComparer\DateNoteDescComparer.cs" />
+    <Compile Include="Models\Bookmark.cs" />
+    <Compile Include="DataStructures\SplayTree\SplayTree.cs" />
+    <Compile Include="DataStructures\SplayTree\SplayTreeNode.cs" />
+    <Compile Include="DataStructures\Trie\StringEntry.cs" />
+    <Compile Include="DataStructures\Trie\StringTrie.cs" />
+    <Compile Include="DataStructures\Trie\StringTrieSet.cs" />
+    <Compile Include="DataStructures\Trie\Trie.cs" />
+    <Compile Include="DataStructures\Trie\TrieEntry.cs" />
+    <Compile Include="DataStructures\Trie\TrieSet.cs" />
+    <Compile Include="DirectoryInfoHelper.cs" />
+    <Compile Include="Enums\FileExtension.cs" />
+    <Compile Include="ExtensionMethods\DateTimeExtensions.cs" />
+    <Compile Include="ExtensionMethods\IConvertibleExtension.cs" />
+    <Compile Include="ExtensionMethods\IEnumerableExtensions.cs" />
+    <Compile Include="ExtensionMethods\IListExtensions.cs" />
+    <Compile Include="ExtensionMethods\StringExtensions.cs" />
+    <Compile Include="HTTPRequestHelper.cs" />
+    <Compile Include="INewsFormat.cs" />
+    <Compile Include="Logger\ILogger.cs" />
+    <Compile Include="Logger\NLogger.cs" />
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Settings\Chromium\AppSettings.cs" />
+    <Compile Include="Settings\Chromium\AWSElastic\AWSElasticCacheModelAPI.cs" />
+    <Compile Include="Settings\Chromium\AWSElastic\AWSElasticSettings.cs" />
+    <Compile Include="Settings\Chromium\BrowserSettings.cs" />
+    <Compile Include="Settings\Chromium\AWSElastic\AWSElasticChromiumUrlFixed.cs" />
+    <Compile Include="Settings\Chromium\ChromiumSettingsService.cs" />
+    <Compile Include="Settings\Chromium\IAppSettingsInitializer.cs" />
+    <Compile Include="Settings\Chromium\IChromiumSettingsService.cs" />
+    <Compile Include="Settings\Chromium\IChromiumUrlFixed.cs" />
+    <Compile Include="Settings\Chromium\MasterPreferences.cs" />
+    <Compile Include="Settings\Chromium\ProducSettings.cs" />
+    <Compile Include="Settings\Chromium\AWSElastic\AWSElasticAppSettingsInitializer.cs" />
+    <Compile Include="Settings\Chromium\WbdistroResponse.cs" />
+    <Compile Include="Settings\UserIp\IcanhazipResolver.cs" />
+    <Compile Include="Settings\UserIp\IUserExternalIpResolver.cs" />
+    <Compile Include="Shortcut\BaseShortcut.cs" />
+    <Compile Include="Shortcut\IShortcut.cs" />
+    <Compile Include="StaticImpressions.cs" />
+    <Compile Include="String\CmdStringRead.cs" />
+    <Compile Include="String\ICmdStringRead.cs" />
+    <Compile Include="String\StringConstants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Suggestion\AutocompleteSuggestion.cs" />
+    <Compile Include="Suggestion\IAutocompleteSuggestion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

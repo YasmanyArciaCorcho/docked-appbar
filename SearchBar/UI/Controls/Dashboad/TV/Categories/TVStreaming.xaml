@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.TV.Categories.TVStreaming"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:st="clr-namespace:SearchBar.UI.Controls.Shortcut"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.TV.Categories"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.9*"/>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="1.9*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <st:AppDashboardShorcut x:Name="cell20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="2" Grid.Row="0" />
+        <st:AppDashboardShorcut x:Name="cell30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="3" Grid.Row="0"/>
+        <st:AppDashboardShorcut x:Name="cell40" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="4" Grid.Row="0"/>
+        <st:AppDashboardShorcut x:Name="cell50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="5" Grid.Row="0"/>
+        <st:AppDashboardShorcut x:Name="cell60" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="6" Grid.Row="0"/>
+        <st:AppDashboardShorcut x:Name="cell22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="2" Grid.Row="2"/>
+        <st:AppDashboardShorcut x:Name="cell32" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="3" Grid.Row="2"/>
+        <st:AppDashboardShorcut x:Name="cell42" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="4" Grid.Row="2"/>
+        <st:AppDashboardShorcut x:Name="cell52" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="5" Grid.Row="2"/>
+        <st:AppDashboardShorcut x:Name="cell62" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" Grid.Column="6" Grid.Row="2"/>
+    </Grid>
+</UserControl>

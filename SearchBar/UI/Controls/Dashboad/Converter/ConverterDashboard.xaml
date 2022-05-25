@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Converter.ConverterDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Converter"
+             mc:Ignorable="d" 
+             d:DesignWidth="1920"  MinHeight="480">
+    <FrameworkElement.Resources>
+        <Style x:Key="BorderInStyle" TargetType="{x:Type Border}">
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="BorderBrush"  Value="#7FBBEB"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="2*"/>
+            <ColumnDefinition  Width="2*"/>
+            <ColumnDefinition  Width="2*"/>
+            <ColumnDefinition  Width="2*"/>
+            <ColumnDefinition  Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="83*"/>
+                <RowDefinition Height="60*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="27*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Orientation="Horizontal" Height="28" Margin="0,22">
+                <Image x:Name="logo" MaxHeight="80"/>
+                <TextBlock TextWrapping="Wrap" Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="22" Text="Converter" Foreground="White"/>
+            </StackPanel>
+            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" Orientation="Vertical" Height="56" Margin="2,54,2,56" Width="316">
+                <TextBlock  TextWrapping="Wrap" HorizontalAlignment="Center" FontSize="18" Foreground="White"><Bold><Run Text="Meet File Conversion Now"/></Bold></TextBlock>
+                <TextBlock  TextWrapping="Wrap" FontSize="12" Foreground="White"><Run Text="You get a new tab Chrome extension that provides you with links to the most popular file converters anytime."/></TextBlock>
+            </WrapPanel>
+            <Image Grid.Row="3" Grid.Column="1" Source="pack://application:,,,/Assets/FileConvert.png" x:Name="fileConverterNow"/>
+            <Button Height="Auto" Grid.Row="5" Grid.Column="1" x:Name="fileConverterNowImage" Content="Install File Conversion Now"/>
+        </Grid>
+        <Grid Background="#CC060A0F" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="0.1*"/>
+                <ColumnDefinition  Width="2*"/>
+                <ColumnDefinition  Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Documents" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+            <Border Grid.Row="2" Grid.Column="1" Style="{StaticResource BorderInStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="2" x:Name="FileCoverter"  Background="#CC080C11" Margin="0,0,0,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.6*"/>
+                        <RowDefinition Height="1.9*"/>
+                        <RowDefinition Height="0.2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="0.6*"/>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="1" x:Name="filesConverter" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <StackPanel Orientation="Vertical" Grid.Row="3" HorizontalAlignment="Left" Margin="4,0,0,0">
+                        <TextBlock  TextWrapping="Wrap" FontSize="12" Text="Use FileConverter to get life your documents" Foreground="#CDCDCD"/>
+                        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" FontSize="10" Text="Convert/Make a PDF to/From docx, txt, rtf, jpg and png." Foreground="#CDCDCD"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="SmallPdf" Background="#CC080C11" MainText="Small PDF" Description="Fantastic tool allows you compress, split, merge, edit a PDF."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="CloudConvert" Background="#CC080C11" MainText="Cloud Convert" Description="Support nearly any audio, video, document, ebook, archive, image, spreadsheet or presentation format."/>
+        </Grid>
+        <Grid Background="#CC010102" Grid.Column="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="0.1*"/>
+                <ColumnDefinition  Width="2*"/>
+                <ColumnDefinition  Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Video" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Mp4" Background="#CC080C11" MainText="Convert to MP4" Description="It's a highly versatile and compressed video format that also can store audio, subtitles, and still images."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Avi" Background="#CC080C11" MainText="Convert to AVI" Description="AVI is a commonly used video format that contains both audio and video."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="FLV" Background="#CC080C11" MainText="Download FLV" Description="Free tool. Convert directly from FLV to Mp3, WMV, AVI, MP4, 3GP."/>
+        </Grid>
+        <Grid Background="#CC010102" Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1.9*"/>
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="0.1*"/>
+                <ColumnDefinition  Width="2*"/>
+                <ColumnDefinition  Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Music" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="20"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Mp3" Background="#CC080C11" MainText="Convert to MP3" Description="It's  one of the most commonly distributed audio files used today."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Flac" Background="#CC080C11" MainText="Convert to Flac" Description="It's basically the high-definition version of MP3."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="FreeRip" Background="#CC080C11" MainText="Download FreeRip" Description="Give your favorite discs a break with FreeRIP MP3 Converter. Listen to your favorite tracks on your gadgets."/>
+        </Grid>
+        <Grid Background="#CC010102" Grid.Column="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28*"/>
+                <RowDefinition Height="90*"/>
+                <RowDefinition Height="89*"/>
+                <RowDefinition Height="38*"/>
+                <RowDefinition Height="89*"/>
+                <RowDefinition Height="78*"/>
+                <RowDefinition Height="49*"/>
+                <RowDefinition Height="19*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="0.1*"/>
+                <ColumnDefinition  Width="2*"/>
+                <ColumnDefinition  Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+            <WrapPanel Grid.Row="4" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="White"><Bold><Run Text="Fast converter"/></Bold></TextBlock>
+                <TextBlock TextWrapping="Wrap"  FontSize="12" Foreground="White"><Run Text="Get your file converted from Word to PDF with just 4 clicks"/></TextBlock>
+            </WrapPanel>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="5*"/>
+                    <ColumnDefinition  Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="WordOption">
+                    <TextBlock TextWrapping="Wrap" FontSize="18" x:Name="WordOptionText" Foreground="White"><Bold><Run Text="Word to PDF"/></Bold></TextBlock>
+                </Border>
+                <Border Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Visible" x:Name="PDFOpion">
+                    <TextBlock TextWrapping="Wrap" x:Name="PDFOptionText" FontSize="18" Foreground="White"><Bold><Run Text="PDF to PPTX"/></Bold></TextBlock>
+                </Border>
+            </Grid>
+            <Button Height="Auto" Grid.Row="6" Grid.Column="1" x:Name="selectAndConvert" Content="Select and Convert" Click="selectAndConvert_Click">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#2196F3" Offset="0.5" />
+                        <GradientStop Color="#DC263C" Offset="0.5" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

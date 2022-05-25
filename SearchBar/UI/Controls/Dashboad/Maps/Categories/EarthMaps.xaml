@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Maps.Categories.EarthMaps"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Maps.Categories"
+             mc:Ignorable="d" 
+            d:DesignHeight="392" d:DesignWidth="1920">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.02*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.5*"/>
+            <ColumnDefinition  Width="0.02*"/>
+        </Grid.ColumnDefinitions>
+        <Grid  Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Satellite Maps" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="RemotePixel" Background="#CC080C11" MainText="Remote Pixel" Description="Satellite Search."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Farearth" Background="#CC080C11" MainText="Farearth" Description="Global Observer."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="GoogleEarth" Background="#CC080C11" MainText="Google Earth" Description="Satellite Search."/>
+        </Grid>
+        <Grid  Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="1.6*"/>
+                <RowDefinition Height="0.8*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.02*"/>
+                <ColumnDefinition  Width="0.5*"/>
+                <ColumnDefinition  Width="0.02*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="22" Text="Satellite Tracking" Foreground="#CDCDCD" VerticalAlignment="Bottom"/>
+            <cb:WebButtonLink Grid.Row="2" Grid.Column="1" x:Name="Findstarlink" Background="#CC080C11" MainText="SpaceX Starlink" Description="Satellites Tracker."/>
+            <cb:WebButtonLink Grid.Row="4" Grid.Column="1" x:Name="Gse" Background="#CC080C11" MainText="GSE" Description="Determine which satellite is closest to your location."/>
+            <cb:WebButtonLink Grid.Row="6" Grid.Column="1" x:Name="Nasa" Background="#CC080C11" MainText="Hubble Space Telescopes" Description="Nasa Telescopes."/>
+        </Grid>
+    </Grid>
+</UserControl>

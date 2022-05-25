@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.ShortCut.ShortcutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:c="clr-namespace:SearchBar.UI.Controls.Base"
+             mc:Ignorable="d" 
+             d:DesignHeight="40"
+             MinWidth="40"
+             Height="40">
+    <c:CustomButton>
+        <StackPanel x:Name="CustomContent"  Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Height="23" Width="23" x:Name="imageIcon" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="ShortcutName" Foreground="White" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </c:CustomButton>
+</UserControl>

@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Dashboad.Dictionary.DictionaryDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:search="clr-namespace:SearchBar.UI.Controls.SearchTextBox"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Dashboad.Dictionary"
+             xmlns:cb="clr-namespace:SearchBar.UI.Controls.Base"
+             mc:Ignorable="d" d:DesignWidth="1920" Height="340">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="53*" MinWidth="500"/>
+            <ColumnDefinition  Width="145*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#CC0C1421">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="204*"/>
+                <RowDefinition Height="53*"/>
+                <RowDefinition Height="83*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Height="38" Margin="123,34,0,0" TextWrapping="Wrap" FontSize="22" Text="Dictionary" Foreground="White" VerticalAlignment="Top" Width="117"/>
+            <Image x:Name="logo" HorizontalAlignment="Left" Height="56" Margin="40,16,0,0" VerticalAlignment="Top" Width="58"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="18*"/>
+                    <ColumnDefinition  Width="422*"/>
+                    <ColumnDefinition  Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <Border Style="{StaticResource BorderInStyle}" BorderThickness="2" Margin="15,0,0,0" x:Name="Wikipedia" Uid="Wikipedia" Background="#CC080C11">
+                        <Image x:Name="powered_wikipedia" Height="34" MinWidth="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderInStyle}" BorderThickness="2" Margin="15,0,0,0"  x:Name="Dictionary"  Uid="Dictionary" Background="#CC080C11">
+                        <Image x:Name="powered_dictionary" Height="34" Margin="3" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                    <Border Style="{StaticResource BorderInStyle}" BorderThickness="2" Margin="15,0,0,0"  x:Name="Thesaurus" Uid="Thesaurus" Background="#CC080C11">
+                        <Image x:Name="powered_thesaurus" Height="34" Margin="3" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    </Border>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="18*"/>
+                    <ColumnDefinition  Width="422*"/>
+                    <ColumnDefinition  Width="25*"/>
+                </Grid.ColumnDefinitions>
+                <search:SearchTextBox  x:Name="SearchBar" Grid.Column="1"  DataContext="{Binding SearchBarViewModel}" SnapsToDevicePixels="true" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </Grid>
+        <Grid Background="#CC010102" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="102*"/>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="54*"/>
+                <RowDefinition Height="75*"/>
+                <RowDefinition Height="42*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48*"/>
+                <ColumnDefinition Width="455*"/>
+                <ColumnDefinition Width="952*"/>
+            </Grid.ColumnDefinitions>
+            <cb:WebButtonLink Grid.Row="1" Grid.Column="1" x:Name="GoogleTranslate" Background="#CC080C11" MainText="Google Translate" Description="Google's free service instantly translates words, phrases, and web pages between English and over 100 other languages."/>
+            <cb:WebButtonLink Grid.Row="3" Grid.Column="1" x:Name="ManualLib" Background="#CC080C11" MainText="Manuals Lib" Description="Search through 3.000.000 manuals online and download pdf manuals."/>
+        </Grid>
+    </Grid>
+</UserControl>

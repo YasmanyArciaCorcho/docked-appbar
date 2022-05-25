@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="SearchBar.UI.Controls.Notes.EditNoteControl"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:c="clr-namespace:SearchBar.UI.Controls.Base"
+             xmlns:local="clr-namespace:SearchBar.UI.Controls.Notes"
+             mc:Ignorable="d" Height="260" Width="300">
+    <UserControl.Resources>
+        <Style x:Key="GridNoteMouseOverStyle" TargetType="{x:Type Grid}">
+            <Setter Property="Background" Value="#FFF7D1"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EEE7C3"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Background" Value="#FFF7D1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid Style="{StaticResource GridNoteMouseOverStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="GridOption" HorizontalAlignment="Stretch" Grid.Row="0" Visibility="Collapsed" Background="#FFF2AB">
+            <StackPanel x:Name="OptionsPanel" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                <c:CustomButton VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="SaveButton"
+                      ToolTip="Save note" SnapsToDevicePixels="true">
+                    <materialDesign:PackIcon Kind="ContentSave" Width="20" Height="20" Foreground="#A2A2A2"/>
+                </c:CustomButton>
+                <c:CustomButton VerticalAlignment="Top" HorizontalAlignment="Right" x:Name="RemoveButton"
+                      ToolTip="Close note" SnapsToDevicePixels="true">
+                    <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Foreground="#A2A2A2"/>
+                </c:CustomButton>
+            </StackPanel>
+        </Grid>
+        <ScrollViewer HorizontalAlignment="Left" Grid.Row="1" Style="{StaticResource LeftScrollViewer}"  x:Name="TextZoneScrollViewer" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <TextBox Grid.Row="1" x:Name="TextZone" FontSize="14" AcceptsReturn="True"  AcceptsTab="True" Foreground="Black" Width="270" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="5,0,0,0"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
